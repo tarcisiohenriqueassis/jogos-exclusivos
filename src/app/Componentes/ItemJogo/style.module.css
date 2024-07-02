@@ -1,0 +1,27 @@
+.card{
+    width: 95%;
+    max-width: 500px;
+    height: auto;
+    display: flex;
+    margin: 7px 0px;
+    background-color: #000;
+    color: #fff;
+    font-weight: 700;
+    justify-content: flex-start;
+    align-items: center;
+    letter-spacing: 2px;
+}
+.containerImagem{
+    width: auto;
+    height: 52px;
+    padding: 0px 3px 0px 0px;
+    background-color: #fffffff7;
+}
+.imagem{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.card p{
+    padding: 0px 0px 0px 10px;
+}
