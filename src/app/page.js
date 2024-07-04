@@ -1,13 +1,34 @@
-import React from "react";
+"use client"
+import React,{useState} from "react";
+
 import styles from "./page.module.css";
-import ItemJogo from "@/app/Componentes/ItemJogo/ItemJogo";
+
 import JogosExclusivos from "@/app/Componentes/ColecaoDadosJogos/colecaoDeDadosJogos.js";
 
+import Header from "./Componentes/Header/header";
+import ItemJogo from "@/app/Componentes/ItemJogo/ItemJogo";
+import jogosExclusivos from "@/app/Componentes/ColecaoDadosJogos/colecaoDeDadosJogos.js";
+
 export default function Home() {
+  
+const[listaJogo, setListaJogo] = useState(JogosExclusivos);
+
+ const FiltrarPlataforma = (plataforma)=>{
+  return setListaJogo(
+    jogosExclusivos.filter((jogo)=> jogo.plataforma === plataforma )
+  )
+ }
+ const LimparPesquisa= () => {
+  return setListaJogo(jogosExclusivos)
+ }
+
   return (
     <main className={styles.main}>
+
+      <Header FiltrarJogoNitendo={()=>FiltrarPlataforma("nintendo")} FiltrarJogoXbox={()=>FiltrarPlataforma("xbox")} FiltrarJogoPlaystation={()=>FiltrarPlataforma("playstation")} btnLimparPesquisa={()=>LimparPesquisa()} />
+      <div><h1>Jogos exclusivos</h1></div>
       <div className={styles.containerCard}>
-      { JogosExclusivos.map((jogo) => (
+      { listaJogo.map((jogo) => (
          <ItemJogo key={jogo.id} nome={jogo.nome} plataforma={jogo.plataforma}/> ))}
       </div>
     </main>
