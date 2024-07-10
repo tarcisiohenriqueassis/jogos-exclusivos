@@ -14,7 +14,7 @@ export default function Header(props){
             </div>
             <div className={style.containerPesquisar}>
                 <Image className={style.ImagemLupa} src={LupaPesquisar} width={50} height={50} alt="lupa de pesquisa"/>
-                <input  type="text" placeholder="Pesquisar Jogos" />
+                <input  type="text" onChange={props.FuncaoPesquisar} placeholder="Pesquise um jogo ou plataforma" />
             </div>
             <div className={style.containerLimparPesquisa}>
                 <button className={style.LimparPesquisa} onClick={props.btnLimparPesquisa}>Limpar Pesquisa</button>

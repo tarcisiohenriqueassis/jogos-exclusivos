@@ -2,7 +2,7 @@
     width: 100%;
     max-width: 450px;
     padding: 15px 0px;
-    height: auto;
+    height: 261px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -22,16 +22,34 @@
 .BtnNitendo,.BtnXbox,.BtnPlaystation{
     width: 95px;
     height: auto;
-    padding: 10px 0px;
+    padding: 20px 0px;
     font-weight: 700;
+    font-size: 14px;
     color: #ffff;
     letter-spacing: 1px;
     border: none;
     border-radius: 5px;
+    transition: 700ms;
 }
 .BtnNitendo{background-color: rgb(223, 18, 18);}
+.BtnNitendo:hover{
+    background: linear-gradient(80deg, red, white);
+    transition: 2s;
+    color: rgb(11 11 12);
+    
+}
 .BtnXbox{background-color: rgb(4 191 16);}
-.BtnPlaystation{background-color: rgb(15, 12, 202);}
+.BtnXbox:hover{
+    background: linear-gradient(80deg, rgb(51, 247, 12), white);
+    transition: 2s;
+    color: rgb(16, 17, 15);
+}
+.BtnPlaystation{background-color: hsl(241, 88%, 44%);}
+.BtnPlaystation:hover{
+    background: linear-gradient(80deg, hsl(214, 96%, 51%), white);
+    transition: 2s;
+    color: rgb(16, 17, 15);
+}
 .containerPesquisar{
     display: flex;
     width: 85%;
