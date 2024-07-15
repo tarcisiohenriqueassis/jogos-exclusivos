@@ -5,7 +5,7 @@
   { id: 3, nome: "Starfield", plataforma: "xbox" },
   { id: 4, nome: "Ghost of Tsushima 2", plataforma: "playstation" },
   { id: 5, nome: "Marvel's Spider-Man 2", plataforma: "playstation" },
-  { id: 6, nome: "Death Stranding 2", plataforma: "playstation" },
+  { id: 6, nome: "Death Stranding 2", plataforma: "playstation"},
   { id: 10,nome: "Clash Of Clans", plataforma:"playstation"},
   { id: 7, nome: "Mario Odissey", plataforma: "nintendo" },
   { id: 8, nome: "Zelda: Tears of Kingdom", plataforma: "nintendo" },

@@ -9,7 +9,7 @@ import Header from "./Componentes/Header/header";
 import ItemJogo from "@/app/Componentes/ItemJogo/ItemJogo";
 import jogosExclusivos from "@/app/Componentes/ColecaoDadosJogos/colecaoDeDadosJogos.js";
 
-export default function Home() {
+export default function Home(){
   
 const[listaJogo, setListaJogo] = useState(JogosExclusivos);
 const[textoBuscar,setTextoBuscar] = useState("");
@@ -22,17 +22,13 @@ const[textoBuscar,setTextoBuscar] = useState("");
  }
  const LimparPesquisa= () => {
   return setListaJogo(jogosExclusivos)
-  setTextoBuscar("")
+   setTextoBuscar("")
  }
- const PesquisarJogo = (textoDigitado) => {
+ const PesquisarJogo = (textoDigitado) =>{  
   setTextoBuscar(textoDigitado)
-  setListaJogo(listaJogo.filter((jogo)=>
-    {
-    jogo.nome.toLocaleLowerCase().includes(textoDigitado.toLocaleLowerCase()) || jogo.plataforma.toLocaleLowerCase().includes(textoDigitado.toLocaleLowerCase())
-  }))
-}
-
-  return (
+  setListaJogo(listaJogo.filter((jogo)=>{return jogo.nome.toLocaleLowerCase().includes(textoDigitado.toLocaleLowerCase()) || jogo.plataforma.toLocaleLowerCase().includes(textoDigitado.toLocaleLowerCase()) }))
+ }
+  return( 
     <main className={styles.main}>
       <Header FiltrarJogoNitendo={()=>FiltrarPlataforma("nintendo")} FiltrarJogoXbox={()=>FiltrarPlataforma("xbox")} FiltrarJogoPlaystation={()=>FiltrarPlataforma("playstation")} btnLimparPesquisa={()=>LimparPesquisa()} FuncaoPesquisar={(event)=>PesquisarJogo(event.target.value)} />
       <div><h1>Jogos exclusivos</h1></div>
@@ -41,4 +37,5 @@ const[textoBuscar,setTextoBuscar] = useState("");
       </div>
     </main>
   );
+
 }
