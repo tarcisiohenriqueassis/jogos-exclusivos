@@ -16,13 +16,14 @@ const[textoBuscar,setTextoBuscar] = useState("");
 
 
  const FiltrarPlataforma = (plataforma)=>{
-  return setListaJogo(
-    jogosExclusivos.filter((jogo)=> jogo.plataforma === plataforma ))
-    setTextoBuscar("")
+  setTextoBuscar("")
+  return setListaJogo(jogosExclusivos.filter((jogo)=> jogo.plataforma === plataforma ))
+    
  }
  const LimparPesquisa= () => {
+  setTextoBuscar("") 
   return setListaJogo(jogosExclusivos)
-   setTextoBuscar("")
+   
  }
  const PesquisarJogo = (textoDigitado) =>{  
   setTextoBuscar(textoDigitado)
@@ -30,7 +31,7 @@ const[textoBuscar,setTextoBuscar] = useState("");
  }
   return( 
     <main className={styles.main}>
-      <Header FiltrarJogoNitendo={()=>FiltrarPlataforma("nintendo")} FiltrarJogoXbox={()=>FiltrarPlataforma("xbox")} FiltrarJogoPlaystation={()=>FiltrarPlataforma("playstation")} btnLimparPesquisa={()=>LimparPesquisa()} FuncaoPesquisar={(event)=>PesquisarJogo(event.target.value)} />
+      <Header FiltrarJogoNitendo={()=>FiltrarPlataforma("nintendo")} FiltrarJogoXbox={()=>FiltrarPlataforma("xbox")} FiltrarJogoPlaystation={()=>FiltrarPlataforma("playstation")} btnLimparPesquisa={()=>LimparPesquisa()} value={textoBuscar} FuncaoPesquisar={(event)=>PesquisarJogo(event.target.value)} />
       <div><h1>Jogos exclusivos</h1></div>
       <div className={styles.containerCard}>
       {listaJogo.map((jogo) => (<ItemJogo key={jogo.id} nome={jogo.nome} plataforma={jogo.plataforma}/>))}
